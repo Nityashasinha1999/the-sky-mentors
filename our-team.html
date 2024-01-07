@@ -16,99 +16,6 @@
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-      * {
-        font-family: "Poppins", sans-serif;
-      }
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background-color: #00205b;
-        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
-      }
-      #banner {
-        background: url(./assets/images/team-banner-image.png);
-        color: #333;
-        text-align: left;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 60vh;
-      }
-
-      #banner h1 {
-        font-size: 2.5em;
-        color: #0065af;
-        margin-bottom: 20px;
-      }
-      #team {
-        background: linear-gradient(to right, #fff, #6666661a, #fff);
-        padding: 40px 0;
-        position: relative;
-        overflow: hidden;
-      }
-      #team .heading {
-        font-weight: 600;
-        font-size: 40px;
-        color: #000000a6;
-      }
-
-      /* Custom styles for capsule-shaped team member blocks */
-      .team-member-block {
-        border-radius: 50px; /* Adjust the value for the desired curvature */
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        margin-bottom: 20px;
-        background-color: #fff; /* Adjust the background color if needed */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .team-member-block img {
-        width: 100%;
-        height: auto;
-        flex: 1;
-        border-bottom: 2px solid #eee; /* Border between image and description */
-      }
-
-      .team-member-block .info {
-        padding: 10px;
-        flex: 1;
-        text-align: center;
-      }
-      .team-member-block .info h3 {
-        font-size: 24px;
-        margin-bottom: 5px;
-      }
-      .team-member-block .info p {
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-      footer {
-        padding: 20px;
-        background-color: #00205b;
-        color: #e9ecef;
-      }
-      footer h4 {
-        padding-bottom: 20px;
-        color: white;
-      }
-      footer ul {
-        list-style-type: none;
-        padding: 0;
-        color: whitesmoke;
-      }
-      footer a {
-        color: whitesmoke !important;
-      }
-    </style>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -125,32 +32,125 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        * {
+          font-family: "Poppins", sans-serif;
+        }
+        .navbar {
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          background-color: #00205b;
+          transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+        }
+        #banner {
+          background: url(./assets/images/team-banner-image.png);
+          color: #333;
+          text-align: left;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 60vh;
+        }
+  
+        #banner h1 {
+          font-size: 2.5em;
+          color: #0065af;
+          margin-bottom: 20px;
+        }
+        #team {
+          background: linear-gradient(to right, #fff, #6666661a, #fff);
+          padding: 40px 0;
+          position: relative;
+          overflow: hidden;
+        }
+        #team .heading {
+          font-weight: 600;
+          font-size: 40px;
+          color: #000000a6;
+        }
+  
+        /* Custom styles for capsule-shaped team member blocks */
+        .team-member-block {
+          border-radius: 50px; /* Adjust the value for the desired curvature */
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          margin-bottom: 20px;
+          background-color: #fff; /* Adjust the background color if needed */
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+  
+        .team-member-block img {
+          width: 100%;
+          height: auto;
+          flex: 1;
+          border-bottom: 2px solid #eee; /* Border between image and description */
+        }
+  
+        .team-member-block .info {
+          padding: 10px;
+          flex: 1;
+          text-align: center;
+        }
+        .team-member-block .info h3 {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+        .team-member-block .info p {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        footer {
+          padding: 20px;
+          background-color: #00205b;
+          color: #e9ecef;
+        }
+        footer h4 {
+          padding-bottom: 20px;
+          color: white;
+        }
+        footer ul {
+          list-style-type: none;
+          padding: 0;
+          color: whitesmoke;
+        }
+        footer a {
+          color: whitesmoke !important;
+        }
+      </style>
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <nav id="navbar" class="navbar text-light">
         <div class="container">
-      <a class="navbar-brand" href="./index.html"
-        ><img
-          src="./assets/images/The Sky Logo Mentors V2.png"
-          alt="logo"
-          width="100"
-      /></a>
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#fat">About Flying</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#mdo">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="./our-team.html">Teams</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="./contact-us.html">Contact Us</a>
-        </li>
-      </ul>
-      </div>
-    </nav>
+          <a class="navbar-brand" href="./index.html"
+            ><img
+              src="./assets/images/The Sky Logo Mentors V2.png"
+              alt="logo"
+              width="100"
+          /></a>
+          <ul class="nav nav-pills align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#fat">About Flying</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#mdo">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./our-team.html">Teams</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./contact-us.html"><button type="button" class="btn btn-light font-weight-bold">Contact Us</button></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     <!-- Banner Section -->
     <section id="banner">
