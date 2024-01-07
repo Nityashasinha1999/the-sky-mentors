@@ -9,6 +9,8 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,15 +39,19 @@
       * {
         font-family: "Poppins", sans-serif;
       }
+      a{
+        color: inherit !important;
+      }
       .navbar {
         position: sticky;
         top: 0;
         z-index: 1000;
-        /* background-color: #00205b;/
-         */
         transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
         background: linear-gradient(to right, #0056b3, #00274d);
+      }
+      .navbar .navbar-toggler {
+        display: none;
       }
       #banner {
         background: linear-gradient(
@@ -94,7 +100,41 @@
       #form {
         margin-top: -40px;
       }
-      form input, form textarea {
+      @media only screen and (max-width: 999px) {
+        #banner {
+          height: 40vh;
+        }
+        #banner h1 {
+          font-size: 1.5em;
+        }
+        #banner p {
+          font-size: 10px;
+        }
+        .d-flex.contact-form {
+          flex-direction: column;
+        }
+
+        .mr-3 {
+          margin-right: 0 !important;
+          margin-bottom: 15px;
+        }
+
+        .ml-5 {
+          margin-left: 0 !important;
+        }
+
+        .bg-contact {
+          width: 100%;
+        }
+
+        .ml-5,
+        .py-4 {
+          width: 100%;
+          margin-left: 0 !important;
+        }
+      }
+      form input,
+      form textarea {
         border: none !important;
         border-bottom: 1px solid #ccc !important; /* Adjust the color as needed */
         border-radius: 0 !important;
@@ -126,36 +166,41 @@
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <nav id="navbar" class="navbar text-light">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"
-            ><img
-              src="./assets/images/The Sky Logo Mentors V2.png"
-              alt="logo"
-              width="100"
-          /></a>
-          <ul class="nav nav-pills align-items-center">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./about-sky-mentors.html">About Sky Mentors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#mdo">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./our-team.html">Training</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./our-team.html">Teams</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./contact-us.html"
-                ><button type="button" class="btn btn-light font-weight-bold">
-                  Contact Us
-                </button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img
+            src="./assets/images/The Sky Logo Mentors V2.png"
+            alt="logo"
+            width="100"
+        /></a>
+        <button class="navbar-toggler" onclick="toggleNav()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav nav-pills align-items-center">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./about-sky-mentors.html"
+              >About Sky Mentors</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./our-team.html">Training</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./our-team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./contact-us.html"
+              ><button type="button" class="btn btn-light font-weight-bold">
+                Contact Us
+              </button></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
     <section id="banner">
       <div class="container">
         <h1>Get In Touch</h1>
@@ -166,13 +211,12 @@
           collaboration opportunities, or simply want to say hello, we'd love to
           hear from you. Connect with Skymentor Flying Institute today!
         </p>
-
       </div>
     </section>
     <section id="form">
       <div class="container mb-5">
         <div class="p-2 bg-white rounded border">
-          <div class="d-flex">
+          <div class="d-flex contact-form">
             <div class="mr-3 bg-contact rounded p-3" style="flex: 0 0 35%">
               <!-- Your content for the first block goes here -->
               <h4>Contact Information</h4>
@@ -180,13 +224,17 @@
                 Need assistance or have questions? Feel free to reach out to us.
               </p>
               <br />
-              <div class="d-flex font-weight-bold align-items-center">
+              <div class="d-flex font-weight-bold align-items-center" style="gap: 10px">
                 <i class="fa fa-phone-alt" aria-hidden="true"></i>
-                <p class="mb-0 ml-3">+91 999999999</p>
+                <div>
+                  <a href="tel:6380784351"><p class="mb-0 text-black">+91 6380784351</p></a>
+                  <a href="tel:9551245124"><p class="mb-0">+91 9551245124</p></a>
+                </div>
               </div>
               <div class="d-flex font-weight-bold align-items-center mt-4">
                 <i class="fas fa-mail-bulk" aria-hidden="true"></i>
-                <p class="mb-0 ml-3">xyz@gmail.com</p>
+              <a href="mailto:info@theskymentors.com">&nbsp;&nbsp;info@theskymentors.com</a>
+                
               </div>
             </div>
 
@@ -229,7 +277,9 @@
                     placeholder="Message"
                   ></textarea>
                 </div>
-                <button type="submit" class="border-0 w-100" id="enquire-btn">Submit</button>
+                <button type="submit" class="border-0 w-100" id="enquire-btn">
+                  Submit
+                </button>
               </form>
             </div>
           </div>
@@ -244,12 +294,15 @@
           <div class="col-md-3">
             <h4>Office</h4>
             <address>
-              3444, 2nd floor, Karma Koushalya Bhavan,<br />
-              Chord Rd, opp. Attiguppe Metro Station,<br />
-              2nd Stage, Vijayanagar,<br />
-              Bengaluru, Karnataka 560040
+              Featherlite building, 200 Feet Radial Rd,
+              Iswarya Nagar, Raja J Joseph Colony, Pallavaram, Chennai,
+              Tamil Nadu 600043
             </address>
-            <p>Mob: +91 9986299159</p>
+            <div class="d-flex"><p>Mob:</p>&nbsp; <div>
+                <a href="tel:6380784351"><p class="mb-0 text-black">+91 6380784351</p></a>
+                <a href="tel:9551245124"><p class="mb-0">+91 9551245124</p></a>
+            </div>
+        </div>
           </div>
 
           <!-- Contact Block -->
@@ -257,7 +310,7 @@
             <h4>Contact</h4>
             <p>
               <i class="fas fa-mail-bulk"></i>
-              <a href="mailto:xyz@gmail.com"> xyz@gmail.com</a>
+              <a href="mailto:info@theskymentors.com">info@theskymentors.com</a>
             </p>
           </div>
 
@@ -265,9 +318,9 @@
           <div class="col-md-3">
             <h4>Useful Links</h4>
             <ul>
-                <li class="pb-2"><a href="./index.html">Home</a></li>
+              <li class="pb-2"><a href="./index.html">Home</a></li>
               <li class="pb-2"><a href="#">About Flying</a></li>
-              <li class="pb-2"><a href="./our-team.html">Teams</a></li>
+              <li class="pb-2"><a href="./our-team.html">Team</a></li>
               <li class="pb-2"><a href="./contact-us.html">Contact Us</a></li>
             </ul>
           </div>
@@ -288,7 +341,6 @@
         </div>
       </div>
     </footer>
-
     <script>
       //   AOS.init();
       AOS.init({
@@ -296,6 +348,28 @@
         once: true, // Animation only occurs once
       });
       $(document).ready(function () {
+        $(".navbar-toggler").click(function () {
+          $("#navbar ul").toggleClass("show");
+
+          // Close button functionality
+          if ($("#navbar ul").hasClass("show")) {
+            $("#navbar").append('<span class="close-btn">&times;</span>');
+          } else {
+            $("#navbar .close-btn").remove();
+          }
+        });
+
+        $("#navbar ul li a").click(function () {
+          $("#navbar ul").removeClass("show");
+          $("#navbar .close-btn").remove();
+        });
+
+        // Close button functionality
+        $(document).on("click", "#navbar .close-btn", function () {
+          $("#navbar ul").removeClass("show");
+          $("#navbar .close-btn").remove();
+        });
+
         var navbar = $("#navbar");
 
         $(window).scroll(function () {

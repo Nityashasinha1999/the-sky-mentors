@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles/styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha384-ez3ggF5JC1JFo2J2q2WiCqEhB3HxGzntn9f2b8TLWlA/4gHt4sVsHcOjxH6EmGOkQ"
+  crossorigin="anonymous"
+/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #00205b;
+      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .navbar .navbar-toggler {
+      display: none;
+    }
+
+    #banner {
+      background: url(./assets/images/about-us-banner.jpg) center/cover no-repeat;
+      color: #333;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+    }
+
+    #banner h1 {
+      font-size: 2.5em;
+      color: #0065af;
+      margin-bottom: 20px;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 100%;
+      background: linear-gradient(to bottom, #00274d, #0056b3);
+      padding: 20px;
+      border-right: 5px solid #fff;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #fff;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #0056b3;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    .accordion-item:first-of-type {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.accordion-item {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0c63e4;
+    background-color: #e7f1ff;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+}
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+.accordion-button:not(.collapsed) {
+    color: #0c63e4;
+    background-color: #e7f1ff;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+.accordion-button[aria-expanded="true"] .icon:after {
+  content: "-";
+}
+
+/* Style for the closed state */
+.accordion-button[aria-expanded="false"] .icon:after {
+  content: "+";
+}
+
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="70">
+  <nav id="navbar" class="navbar text-light">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./assets/images/The Sky Logo Mentors V2.png" alt="logo" width="100" />
+      </a>
+      <button class="navbar-toggler" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav nav-pills align-items-center">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="./about-sky-mentors.html">About Sky Mentors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="./courses.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="./our-team.html">Training</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="./our-team.html">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="./contact-us.html">
+            <button type="button" class="btn btn-light font-weight-bold">
+              Contact Us
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner Section -->
+  <section id="banner">
+    <div class="container">
+      <h1><span class="text-light">Courses</span></h1>
+    </div>
+  </section>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="sidebar">
+          <a href="#" class="category" data-category="universities">For Universities</a>
+          <a href="#" class="category" data-category="corporates">For Corporates</a>
+          <a href="#" class="category" data-category="individuals">For Individuals</a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="content">
+          <div class="accordion" id="universities">
+            <!-- Accordion Item 1 -->
+         <!-- Accordion Item 1 -->
+          <!-- Accordion Item 1 -->
+<div class="accordion-item">
+    <h5 class="accordion-header" id="headingOne">
+      <button class="accordion-button flex justify-content-between" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Aero Modelling: (Value Added Courses)
+        <span class="icon text-end"></span>
+      </button>
+    </h5>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#universities">
+      <div class="accordion-body p-4">
+        <div class="course-content">
+          <h5>Course Overview:</h5>
+          <p>Embark on a thrilling adventure as we delve into the fascinating world of Aero Modelling. Our curriculum is meticulously crafted to offer a perfect balance of theoretical knowledge and hands-on practical applications. Whether you are passionate about aircraft design, aerodynamics, or simply curious about the principles governing flight, this course is your gateway to unlocking the secrets of the skies.</p>
+  
+          <h5>Course Duration:</h5>
+          <div class="duration">
+            <div class="theory-sessions">
+              <h5>Theory Sessions (18 hours):</h5>
+              <ul>
+                <li>Aerodynamics Fundamentals</li>
+                <li>Principles of Aircraft Design</li>
+                <li>Materials and Structures in Aero Modelling</li>
+                <li>Propulsion Systems and Engines</li>
+                <li>Flight Control Systems</li>
+                <li>Safety and Regulations in Aero Modelling</li>
+              </ul>
+            </div>
+  
+            <div class="practical-sessions">
+              <h5>Practical Sessions (12 hours):</h5>
+              <ul>
+                <li>Introduction to Aero Modelling Kits and Tools</li>
+                <li>Hands-on Aircraft Design Projects</li>
+                <li>Building and Testing Prototype Models</li>
+                <li>Flight Simulation Exercises</li>
+                <li>Practical Applications of Aerodynamic Principles</li>
+                <li>Safety Protocols and Practical Demonstrations</li>
+              </ul>
+            </div>
+          </div>
+  
+          <h5>Why Choose Sky Mentors for Aero Modelling?</h5>
+          <ul>
+            <li><strong>Experienced Instructors:</strong> Learn from industry experts and seasoned professionals who bring real-world insights into the classroom.</li>
+            <li><strong>State-of-the-Art Facilities:</strong> Our practical sessions are conducted in cutting-edge facilities, providing you with hands-on experience using the latest Aero Modelling kits and tools.</li>
+            <li><strong>Interactive Learning:</strong> Engage in dynamic discussions, collaborative projects, and group activities that foster a vibrant learning environment.</li>
+            <li><strong>Personalized Guidance:</strong> Benefit from personalized attention and guidance as you navigate through the theoretical concepts and hands-on projects.</li>
+            <li><strong>Industry-Relevant Curriculum:</strong> Stay ahead in your field with a curriculum that aligns with the latest advancements and industry standards in Aero Modelling.</li>
+          </ul>
+  
+          <p><strong>Join Sky Mentors and Elevate Your Aerospace Education!</strong></p>
+          <p>Ready to explore the skies in a whole new way? Enroll in our Aero Modelling Course and witness your passion for aviation take flight. At Sky Mentors, we are committed to nurturing your curiosity and equipping you with the skills needed to excel in the dynamic field of Aero Modelling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed flex justify-content-between" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Drone Piloting (Value Added Courses)
+        <span class="icon text-end"></span>
+
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-parent="#universities">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed flex justify-content-between" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    CATIA (Value Added Courses)
+        <span class="icon text-end"></span>
+
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#universities">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Gender Sensitisation & Cultural Awareness (Value Added Courses)
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#universities">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- Accordion content for universities -->
+          <div class="accordion" id="corporates">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Accordion Item #1
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Accordion Item #2
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+                        
+            <!-- Accordion content for corporates -->
+          </div>
+          <div class="accordion" id="individuals">
+            <!-- Accordion content for individuals -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <!-- Office Block -->
+        <div class="col-md-3">
+          <h4>Office</h4>
+          <address>
+            Featherlite building, 200 Feet Radial Rd,
+            Iswarya Nagar, Raja J Joseph Colony, Pallavaram, Chennai,
+            Tamil Nadu 600043
+          </address>
+          <div class="d-flex"><p>Mob:</p>&nbsp; <div>
+              <a href="tel:6380784351"><p class="mb-0 text-black">+91 6380784351</p></a>
+              <a href="tel:9551245124"><p class="mb-0">+91 9551245124</p></a>
+          </div>
+      </div>
+        </div>
+
+        <!-- Contact Block -->
+        <div class="col-md-3">
+          <h4>Contact</h4>
+          <p>
+            <i class="fas fa-mail-bulk"></i>
+            <a href="mailto:info@theskymentors.com"> info@theskymentors.com</a>
+          </p>
+        </div>
+
+        <!-- Useful Links Block -->
+        <div class="col-md-3">
+          <h4>Useful Links</h4>
+          <ul>
+            <li class="pb-2"><a href="./index.html">Home</a></li>
+            <li class="pb-2"><a href="#">About Flying</a></li>
+            <li class="pb-2"><a href="./our-team.html">Team</a></li>
+            <li class="pb-2"><a href="./contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Me Block -->
+        <div class="col-md-3">
+          <h4>Follow Me</h4>
+          <p>
+            <a href="#" target="_blank" class="mr-3"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" target="_blank" class="mr-3"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var categories = document.querySelectorAll('.category');
+      categories.forEach(function (category) {
+        category.addEventListener('click', function () {
+          var selectedCategory = this.getAttribute('data-category');
+          var accordions = document.querySelectorAll('.accordion');
+          accordions.forEach(function (accordion) {
+            accordion.style.display = 'none';
+          });
+          var activeAccordion = document.getElementById(selectedCategory);
+          if (activeAccordion) {
+            activeAccordion.style.display = 'block';
+          }
+        });
+      });
+
+      // Show 'For Universities' by default
+      document.getElementById('universities').style.display = 'block';
+      document.getElementById('corporates').style.display = 'none';
+      document.getElementById('individuals').style.display = 'none';
+    });
+
+    $(document).ready(function () {
+      $(".navbar-toggler").click(function () {
+        $("#navbar ul").toggleClass("show");
+
+        // Close button functionality
+        if ($("#navbar ul").hasClass("show")) {
+          $("#navbar").append('<span class="close-btn">&times;</span>');
+        } else {
+          $("#navbar .close-btn").remove();
+        }
+      });
+
+      $("#navbar ul li a").click(function () {
+        $("#navbar ul").removeClass("show");
+        $("#navbar .close-btn").remove();
+      });
+
+      // Close button functionality
+      $(document).on("click", "#navbar .close-btn", function () {
+        $("#navbar ul").removeClass("show");
+        $("#navbar .close-btn").remove();
+      });
+
+      var navbar = $("#navbar");
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          navbar.addClass("scroll");
+        } else {
+          navbar.removeClass("scroll");
+        }
+      });
+
+      $("body").scrollspy({ target: "#navbar" });
+    });
+  </script>
+</body>
+
+</html>

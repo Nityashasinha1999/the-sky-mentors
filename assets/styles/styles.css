@@ -9,6 +9,65 @@
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
   }
+  .navbar .navbar-toggler {
+    display: none;
+  }
+  @media only screen and (max-width: 999px) {
+    /* Styles for mobile view */
+    .navbar .navbar-toggler {
+      display: block !important;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 15px;
+      margin: 10px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    #navbar ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #0056b3, #00274d);
+      z-index: 1000;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      transform: translateX(-100%);
+    }
+
+    #navbar ul.show {
+      transform: translateX(0);
+    }
+
+    #navbar ul li {
+      padding: 20px;
+      text-align: center;
+    }
+
+    #navbar ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #navbar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 36px;
+      z-index: 9999999;
+      cursor: pointer;
+    }
+  }
 
   .gradient-text {
     background: linear-gradient(to right, #00205b, rgba(0, 0, 128, 25%));
@@ -248,6 +307,53 @@
     filter: invert(0);
     transition: 0.4s ease-out;
   }
+  /*team*/
+  #team {
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  #team .heading {
+    font-weight: 600;
+    font-size: 40px;
+    color: #000000a6;
+  }
+
+  /* Custom styles for capsule-shaped team member blocks */
+  .team-member-block {
+    border-radius: 50px; /* Adjust the value for the desired curvature */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 20px;
+    background-color: #fff; /* Adjust the background color if needed */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-block img {
+    width: 100%;
+    height: 249px !important;
+    height: auto;
+    object-fit: cover;
+    flex: 1;
+    border-bottom: 2px solid #eee;
+  }
+
+  .team-member-block .info {
+    padding: 20px;
+    text-align: center;
+  }
+  .team-member-block .info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .team-member-block .info p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
   /* about-sky-mentors*/
   .commitment-block{
     width: 100%;
@@ -273,3 +379,55 @@ background-color: #f5f5f5;
 padding-top: 10px;
 padding-bottom: 10px;
 }
+@media only screen and (max-width: 999px) {
+    footer {
+      padding: 20px 0;
+    }
+
+    .col-md-3 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    #sections{
+        flex-direction: column;
+    }
+    h2{
+        font-size: 24px !important;
+    }
+    h3{
+        font-size: 18px !important;
+    }
+    h1{
+        font-size: 30px !important;
+    }
+    p{
+        font-size: 14px;
+    }
+    .hr-line{
+        width: 30%;
+    }
+    my-5{
+        margin-top: 24px !important;
+        margin-bottom: 24px !important;
+    }
+    .container .mb-5{
+        margin-bottom: 24px !important;
+    }
+    .dualTiles{
+        margin: 20px 0px;
+        flex-direction: column-reverse !important;
+    }
+    .dualTiles > div{
+        padding: 20px 25px;
+    }
+    #banner{
+        height: 40vh;
+    }
+    a.flowLink::after{
+        width: 100%;
+    }
+    a.flowLink{
+        color: white;
+    }
+
+  }

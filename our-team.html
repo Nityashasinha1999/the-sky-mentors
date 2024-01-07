@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,6 +46,9 @@
           transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
         }
+        .navbar .navbar-toggler {
+        display: none;
+      }
         #banner {
           background: url(./assets/images/team-banner-image.png);
           color: #333;
@@ -62,102 +67,43 @@
           color: #0065af;
           margin-bottom: 20px;
         }
-        #team {
-          background: linear-gradient(to right, #fff, #6666661a, #fff);
-          padding: 40px 0;
-          position: relative;
-          overflow: hidden;
-        }
-        #team .heading {
-          font-weight: 600;
-          font-size: 40px;
-          color: #000000a6;
-        }
-  
-        /* Custom styles for capsule-shaped team member blocks */
-        .team-member-block {
-          border-radius: 50px; /* Adjust the value for the desired curvature */
-          overflow: hidden;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          margin-bottom: 20px;
-          background-color: #fff; /* Adjust the background color if needed */
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-  
-        .team-member-block img {
-          width: 100%;
-          height: auto;
-          flex: 1;
-          border-bottom: 2px solid #eee; /* Border between image and description */
-        }
-  
-        .team-member-block .info {
-          padding: 10px;
-          flex: 1;
-          text-align: center;
-        }
-        .team-member-block .info h3 {
-          font-size: 24px;
-          margin-bottom: 5px;
-        }
-        .team-member-block .info p {
-          font-size: 16px;
-          margin-bottom: 5px;
-        }
-        footer {
-          padding: 20px;
-          background-color: #00205b;
-          color: #e9ecef;
-        }
-        footer h4 {
-          padding-bottom: 20px;
-          color: white;
-        }
-        footer ul {
-          list-style-type: none;
-          padding: 0;
-          color: whitesmoke;
-        }
-        footer a {
-          color: whitesmoke !important;
-        }
       </style>
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <nav id="navbar" class="navbar text-light">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"
-            ><img
-              src="./assets/images/The Sky Logo Mentors V2.png"
-              alt="logo"
-              width="100"
-          /></a>
-          <ul class="nav nav-pills align-items-center">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./about-sky-mentors.html">About Sky Mentors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#mdo">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./our-team.html">Training</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./our-team.html">Teams</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./contact-us.html"
-                ><button type="button" class="btn btn-light font-weight-bold">
-                  Contact Us
-                </button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img
+            src="./assets/images/The Sky Logo Mentors V2.png"
+            alt="logo"
+            width="100"
+        /></a>
+        <button class="navbar-toggler" onclick="toggleNav()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav nav-pills align-items-center">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./about-sky-mentors.html">About Sky Mentors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./our-team.html">Training</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./our-team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./contact-us.html"
+              ><button type="button" class="btn btn-light font-weight-bold">
+                Contact Us
+              </button></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Banner Section -->
     <section id="banner">
@@ -180,12 +126,12 @@
         <!-- Team Members Blocks -->
         <div class="row my-5 d-flex align-items-stretch">
           <!-- Team Member 1 -->
-          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-3">
+          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-4">
             <div class="team-member-block">
               <img
-                src="./assets/images/team-img-1.jpg"
+                src="./assets/images/team-img-1.jpeg"
                 alt="Team Member 1"
-                class="img-fluid"
+                class="img-fluid h-full"
               />
               <div class="info">
                 <h3>KK Mishra</h3>
@@ -195,12 +141,12 @@
           </div>
 
           <!-- Team Member 2 -->
-          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-3">
+          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-4">
             <div class="team-member-block">
               <img
                 src="./assets/images/team-img-2.jpg"
                 alt="Team Member 2"
-                class="img-fluid"
+                class="img-fluid h-full"
               />
               <div class="info">
                 <h3>Sonam Mishra</h3>
@@ -210,31 +156,16 @@
           </div>
 
           <!-- Team Member 3 -->
-          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-3">
+          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-4">
             <div class="team-member-block">
               <img
-                src="./assets/images/team-img-3.jpg"
+                src="./assets/images/team-img-3.jpeg"
                 alt="Team Member 3"
-                class="img-fluid"
+                class="img-fluid h-full"
               />
               <div class="info">
                 <h3>Shivani Nagpal</h3>
-                <p>Director - Workshops and Events</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Team Member 4 -->
-          <div data-aos="fade-up" data-aos-duration="3000" class="col-md-3">
-            <div class="team-member-block">
-              <img
-                src="./assets/images/team-img-4.jpg"
-                alt="Team Member 4"
-                class="img-fluid"
-              />
-              <div class="info">
-                <h3>Abdul Mustakeem</h3>
-                <p>Consultant - Legal</p>
+                <p>Director, Training, Learning & Development</p>
               </div>
             </div>
           </div>
@@ -248,12 +179,15 @@
           <div class="col-md-3">
             <h4>Office</h4>
             <address>
-              3444, 2nd floor, Karma Koushalya Bhavan,<br />
-              Chord Rd, opp. Attiguppe Metro Station,<br />
-              2nd Stage, Vijayanagar,<br />
-              Bengaluru, Karnataka 560040
+              Featherlite building, 200 Feet Radial Rd,
+              Iswarya Nagar, Raja J Joseph Colony, Pallavaram, Chennai,
+              Tamil Nadu 600043
             </address>
-            <p>Mob: +91 9986299159</p>
+            <div class="d-flex"><p>Mob:</p>&nbsp; <div>
+                <a href="tel:6380784351"><p class="mb-0 text-black">+91 6380784351</p></a>
+                <a href="tel:9551245124"><p class="mb-0">+91 9551245124</p></a>
+            </div>
+        </div>
           </div>
 
           <!-- Contact Block -->
@@ -261,7 +195,7 @@
             <h4>Contact</h4>
             <p>
               <i class="fas fa-mail-bulk"></i>
-              <a href="mailto:xyz@gmail.com"> xyz@gmail.com</a>
+              <a href="mailto:info@theskymentors.com"> info@theskymentors.com</a>
             </p>
           </div>
 
@@ -269,10 +203,10 @@
           <div class="col-md-3">
             <h4>Useful Links</h4>
             <ul>
-                <li class="pb-2"><a href="./index.html">Home</a></li>
-                <li class="pb-2"><a href="#">About Flying</a></li>
-                <li class="pb-2"><a href="./our-team.html">Teams</a></li>
-                <li class="pb-2"><a href="./contact-us.html">Contact Us</a></li>
+              <li class="pb-2"><a href="./index.html">Home</a></li>
+              <li class="pb-2"><a href="#">About Flying</a></li>
+              <li class="pb-2"><a href="./our-team.html">Team</a></li>
+              <li class="pb-2"><a href="./contact-us.html">Contact Us</a></li>
             </ul>
           </div>
 
@@ -292,10 +226,46 @@
         </div>
       </div>
     </footer>
-
     <script>
-      AOS.init();
+      //   AOS.init();
+      AOS.init({
+        duration: 1000, // Adjust the duration as needed
+        once: true, // Animation only occurs once
+      });
       $(document).ready(function () {
+        $(".navbar-toggler").click(function () {
+          $("#navbar ul").toggleClass("show");
+
+          // Close button functionality
+          if ($("#navbar ul").hasClass("show")) {
+            $("#navbar").append('<span class="close-btn">&times;</span>');
+          } else {
+            $("#navbar .close-btn").remove();
+          }
+        });
+
+        $("#navbar ul li a").click(function () {
+          $("#navbar ul").removeClass("show");
+          $("#navbar .close-btn").remove();
+        });
+
+        // Close button functionality
+        $(document).on("click", "#navbar .close-btn", function () {
+          $("#navbar ul").removeClass("show");
+          $("#navbar .close-btn").remove();
+        });
+
+        var navbar = $("#navbar");
+
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            navbar.addClass("scroll");
+          } else {
+            navbar.removeClass("scroll");
+          }
+        });
+
+
         $("body").scrollspy({ target: "#navbar" });
       });
     </script>
