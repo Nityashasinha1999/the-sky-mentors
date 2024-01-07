@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #00205b;
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+      }
+      #banner {
+        background: url(./assets/images/home-banner-image.jpg) fixed;
+        color: #333;
+        text-align: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        height: 60vh;
+      }
+
+      #banner h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      #banner p {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+
+      #enquire-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        text-decoration: none;
+        background-color: #1b314f; /* Navy blue button color */
+        color: #fff; /* White text color */
+        border-radius: 5px;
+      }
+
+      #enquire-btn:hover {
+        background-color: #0056b3;
+      }
+      #sections {
+        display: flex;
+        gap: 30px;
+        height: 100%; /* Half of the viewport height */
+        margin-top: -60px;
+      }
+
+      .section {
+        background-color: #f8f9fa;
+        flex: 1; /* Equal width for each section */
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .section h2 {
+        font-size: 2em;
+      }
+
+      .section p {
+        color: #5f646a;
+        font-size: 14px;
+      }
+      .circle-img {
+        border-radius: 50%;
+        border: 7px solid #eaeaea;
+        width: 72%;
+        height: auto;
+      }
+      .hr-line {
+        border-top: 1px solid;
+        width: 100%;
+      }
+
+      footer {
+        padding: 20px;
+        background-color: #00205b;
+        color: #e9ecef;
+      }
+      footer h4 {
+        padding-bottom: 20px;
+        color: white;
+      }
+      footer ul {
+        list-style-type: none;
+        padding: 0;
+        color: whitesmoke;
+      }
+      footer a {
+        color: whitesmoke !important;
+      }
+      .course-block {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .course-block img {
+        width: 100%;
+        height: auto;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+      }
+      .dualTiles.reversed {
+    flex-direction: row-reverse;
+}
+
+.dualTiles {
+    position: relative;
+    display: flex;
+    margin: 60px 0px;
+}
+.imageBox {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+}
+.imageBox::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: #fafafa;
+    background-image: url(./assets/images/waves-faded.jpg);
+    background-size: cover;
+    background-position: top left;
+}
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    visibility: visible;
+    animation-name: zoomIn;
+}
+.dualTiles img {
+    width: 100%;
+    border-radius: 10px;
+    animation-duration: 2s;
+}
+
+.imageBox img {
+    z-index: 2;
+    border-radius: 10px;
+    width: 100%;
+}
+.imageBox::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 55px;
+    height: 55px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #00205b;
+}
+.dualTiles > div:first-child {
+    text-align: center;
+}
+
+.dualTiles > div {
+    position: relative;
+    flex: 1;
+    padding: 30px 45px;
+    box-sizing: border-box;
+    align-self: center;
+}
+.barred {
+    position: relative;
+    margin-bottom: 35px;
+}
+.barred::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0px;
+    height: 3px;
+    width: 44px;
+    z-index: 1;
+    border-radius: 2px;
+    background-color: #00205b;
+}
+a.flowLink {
+    position: relative;
+    display: inline-block;
+    padding: 14px 22px;
+    padding-right: 42px;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: white;
+    z-index: 1;
+    transition: 0.4s;
+}
+a.flowLink:hover {
+    color: #ffffff;
+    transition: 0.4s;
+}
+a.flowLink:hover::after {
+    width: 100%;
+    transition: 0.4s ease-out;
+}
+a.flowLink.dark::before, a.flowLink:hover::before, button::before {
+    filter: invert(1);
+    transition: 0.4s;
+}
+a.flowLink::before, button::before {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 11px;
+    height: 9px;
+    background-image: url(./assets/images/arrow.png);
+}
+a.flowLink::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 55px;
+    z-index: -1;
+    background-color: #00205b;
+    border-radius: 24px;
+    filter: invert(0);
+    transition: 0.4s ease-out;
+}
+    </style>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <link
+       rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+       crossorigin="anonymous"
+     />
+     <link
+       rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+       integrity="sha384-ez3ggF5JC1JFo2J2q2WiCqEhB3HxGzntn9f2b8TLWlA/4gHt4sVsHcOjxH6EmGOkQ"
+       crossorigin="anonymous"
+     />
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="70">
+    <nav id="navbar" class="navbar text-light">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img
+            src="./assets/images/The Sky Logo Mentors V2.png"
+            alt="logo"
+            width="100"
+        /></a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#fat">About Flying</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#mdo">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./our-team.html">Teams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./contact-us.html"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section id="banner">
+      <div class="container">
+        <h1>Unlock Your Wings to the Sky</h1>
+        <p>
+          Embark on a journey of knowledge and adventure with Skymentor Flying
+          Institute.
+        </p>
+        <a href="#enquiry" id="enquire-btn">Enquire Now</a>
+      </div>
+    </section>
+
+    <section id="sections" class="container mb-5">
+      <div id="section1" class="section">
+        <!-- <h2>Section 1</h2> -->
+        <img
+          src="./assets/images/page1_img01.jpg"
+          alt="our programs"
+          class="circle-img"
+        />
+        <h3 class="text-uppercase mt-3">Our Programs</h3>
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum
+        </p>
+      </div>
+
+      <div id="section2" class="section">
+        <img
+          src="./assets/images/page1_img02.jpg"
+          alt="our programs"
+          class="circle-img"
+        />
+        <h3 class="text-uppercase mt-3">OUR FLEET</h3>
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum
+        </p>
+      </div>
+
+      <div id="section3" class="section">
+        <img
+          src="./assets/images/page1_img03.jpg"
+          alt="our programs"
+          class="circle-img"
+        />
+        <h3 class="text-uppercase mt-3">OUR INSTRUCTORS</h3>
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum
+        </p>
+      </div>
+    </section>
+    <section id="" class="container mb-5 text-center">
+      <h2 class="">WELCOME TO SKY MENTORS</h2>
+      <p class="pt-2">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+        et quas molestias excepturi sint occaecati cupiditate non provident,
+        similique sunt in culpa qui officia deserunt mollitia animi, id est
+        laborum et dolorum fuga.
+      </p>
+    </section>
+    <section id="courses" class="container mb-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="hr-line"></div>
+        <h2 class="text-uppercase mx-3">Courses</h2>
+        <div class="hr-line"></div>
+      </div>
+      <div class="dualTiles reversed" id="Overview" style="">
+        <div>
+            <div style="max-width: 350px" class="imageBox">
+                <div><img src="./assets/images/consulting_intro.jpg" data-aos="zoom-in" data-aos-duration="3000" alt="SMART Overview"></div>
+            </div>
+        </div>
+        <div>
+            <h1 class="barred">Explore a World of Knowledge with Our University Courses</h1>
+            <p> Our university courses offer a diverse range of subjects, providing students with unparalleled insights and opportunities for growth. From cutting-edge research to hands-on practical experience, we empower students to pursue their passions and build a foundation for a successful future.</p>
+            <a href="#" class="flowLink dark greenBubble trialPopup" data-trigger="Talk to an Expert Banner">Explore Now</a>
+
+        </div>
+    </div>
+    <div class="dualTiles reversed" id="Overview" style="">
+        <div class="text-left">
+            <h1 class="barred">Corporate Training Solutions</h1>
+            <p>Elevate your corporate team with specialized training programs designed to meet the dynamic needs of the business world. Our corporate training solutions offer a strategic approach to skill development, leadership enhancement, and innovation, ensuring your team stays competitive in today's fast-paced corporate landscape.</p>
+            <a href="#" class="flowLink dark greenBubble trialPopup" data-trigger="Talk to an Expert Banner">Explore Now</a>
+        </div>
+        <div>
+            <div style="max-width: 350px" class="imageBox">
+                <div data-aos="zoom-in"><img src="./assets/images/corporate.jpg" alt="SMART Overview"></div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="dualTiles reversed" id="Overview" style="">
+        <div>
+            <div style="max-width: 350px" class="imageBox">
+                <div  data-aos="zoom-in"><img src="./assets/images/individuals.jpg" alt="SMART Overview"></div>
+            </div>
+        </div>
+        <div>
+            <h1 class="barred">Personalized Learning for Individuals</h1>
+            <p>Unlock your potential with our personalized learning programs for individuals. From skill enhancement to personal development, our courses cater to your unique needs. Explore a world of knowledge, enhance your abilities, and embark on a journey of continuous growth and success.</p>
+            <a href="#" class="flowLink dark greenBubble trialPopup" data-trigger="Talk to an Expert Banner">Explore Now</a>
+
+        </div>
+    </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Office Block -->
+          <div class="col-md-3">
+            <h4>Office</h4>
+            <address>
+              3444, 2nd floor, Karma Koushalya Bhavan,<br />
+              Chord Rd, opp. Attiguppe Metro Station,<br />
+              2nd Stage, Vijayanagar,<br />
+              Bengaluru, Karnataka 560040
+            </address>
+            <p>Mob: +91 9986299159</p>
+          </div>
+
+          <!-- Contact Block -->
+          <div class="col-md-3">
+            <h4>Contact</h4>
+            <p>
+              <i class="fas fa-mail-bulk"></i>
+              <a href="mailto:xyz@gmail.com"> xyz@gmail.com</a>
+            </p>
+          </div>
+
+          <!-- Useful Links Block -->
+          <div class="col-md-3">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow Me Block -->
+          <div class="col-md-3">
+            <h4>Follow Me</h4>
+            <p>
+              <a href="#" target="_blank" class="mr-3"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" target="_blank" class="mr-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+    //   AOS.init();
+    AOS.init({
+        duration: 1000, // Adjust the duration as needed
+        once: true, // Animation only occurs once
+      });
+      $(document).ready(function () {
+        $("body").scrollspy({ target: "#navbar" });
+      });
+    </script>
+  </body>
+</html>
